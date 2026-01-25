@@ -1,0 +1,492 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Roboto', sans-serif; 
+       color: #212529; 
+    }
+.container { max-width: 1140px; 
+             margin: 0 auto;  
+             padding: 0 15px; 
+            }
+.d-flex { display: flex; 
+}
+.justify-content-between { justify-content: space-between; 
+}
+.align-items-center { align-items: center; 
+}
+
+/* Top Nav */
+.top-nav { background: #212934; 
+           padding: 12px 0; 
+           font-size: 14px; 
+        }
+.top-nav a { color: #cfd6e1; 
+             text-decoration: none; 
+             margin-right: 15px; 
+            }
+.top-nav i { color: #cfd6e1; 
+             margin-right: 5px; 
+            }
+
+/* Header */
+.main-header { padding: 20px 0; 
+               background: #fff; 
+               box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+             }
+.brand { font-size: 45px; 
+         font-weight: 700; color: #59ab6e;
+         text-decoration: none; 
+        }
+.nav-menu { list-style: none; 
+            display: flex; 
+        }
+.nav-menu li a { padding: 0 50px; 
+                text-decoration: none; 
+                color: #212529; 
+                font-weight: 300 !important; 
+                font-size: 18px; 
+            }
+.nav-menu li a:hover, .nav-menu li a.active { color: #59ab6e; 
+}
+
+/* Hero Section */
+.hero { background: #efefef; 
+        height: 100vh; 
+        position: relative; 
+        display: flex; 
+        align-items: center; 
+        overflow: hidden; }
+.hero .slide { display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            width: 100%; 
+        }
+.hero-text { flex: 1; 
+             padding-right: 50px; 
+            }
+.hero-text h1 { font-size: 48px; 
+                color: #212529; 
+                margin-bottom: 10px; 
+            }
+.hero-text h1 span { color: #59ab6e; 
+}
+.hero-text h2 { font-size: 30px; 
+                font-weight: 300; 
+                margin-bottom: 20px; 
+            }
+.hero-text p { font-size: 18px; 
+               line-height: 1.6; 
+               font-weight: 300; 
+            }
+.hero-img { flex: 1; 
+            text-align: center; 
+        }
+.hero-img img { max-width: 100%; 
+}
+
+/* Arrows */
+.arrow { position: absolute; 
+         top: 50%; 
+         transform: translateY(-50%); 
+         background: none; 
+         border: none; 
+         font-size: 40px; 
+         color: #59ab6e; 
+         cursor: pointer; 
+        }
+.prev { left: 20px; 
+}
+.next { right: 20px;
+ }
+
+/* Categories */
+.section-title { text-align: center; 
+                 margin: 50px 0; 
+                }
+.section-title h2 { font-size: 36px; 
+                    font-weight: 700; 
+                }
+.category-grid { display: grid; 
+                 grid-template-columns: repeat(3, 1fr); 
+                 gap: 30px; 
+                 text-align: center; 
+                }
+.cat-img { width: 250px; 
+           height: 250px; 
+           border-radius: 50%; 
+           border: 1px solid #ddd; 
+           margin: 0 auto 20px; 
+           overflow: hidden; 
+        }
+.cat-img img { width: 100%; 
+               height: 100%; 
+               object-fit: cover; 
+            }
+.btn-green { display: inline-block; 
+             background: #59ab6e; 
+             color: #fff; 
+             padding: 12px 25px; 
+             border-radius: 5px; 
+             text-decoration: none; 
+             margin-top: 15px; 
+            }
+
+/* Badge */
+.nav-icons a { position: relative; 
+               color: #212529; 
+               font-size: 22px; 
+               margin-left: 20px; 
+            }
+.badge { position: absolute; 
+         top: -10px; right: -10px; 
+         background: #e9ecef; color: #212529; 
+         border-radius: 50%; 
+         padding: 2px 7px; 
+         font-size: 12px; 
+        }
+
+/* Featured Products Styles */
+.bg-light { background-color: #f8f9fa !important; 
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.product-card {
+    background: #fff;
+    border: 1px solid #dee2e6;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.product-body {
+    padding: 20px;
+}
+
+.rating-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.stars {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+.stars li i {
+    font-size: 14px;
+}
+
+.text-yellow { color: #ffc107; }
+.text-muted { color: #bcbcbc; }
+
+.price {
+    color: #6c757d;
+    font-weight: 400;
+}
+
+.product-title {
+    display: block;
+    font-size: 22px;
+    font-weight: 500;
+    color: #212529;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.product-title:hover { color: #59ab6e; }
+
+.product-text {
+    font-size: 16px;
+    color: #212529;
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.reviews {
+    color: #6c757d;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Footer uslublari */
+.site-footer {
+    background-color: #212529; /* To'q fon rangi */
+    color: #adb5bd; /* Ochiq matn rangi */
+    padding-top: 60px;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #444; /* Ustunlar ostidagi chiziq */
+}
+
+.footer-col {
+    flex: 1;
+}
+
+.footer-col .brand {
+    color: #59ab6e; /* Yashil rang */
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.footer-col h4 {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+/* Sarlavhalar ostidagi yashil chiziq */
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 20%;
+    height: 2px;
+    background-color: #59ab6e;
+}
+
+.footer-col address p,
+.footer-col ul li a {
+    color: #adb5bd;
+    line-height: 2;
+    transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: #59ab6e;
+}
+
+.footer-col i {
+    margin-right: 10px;
+}
+
+/* Footer pastki bar (ijtimoiy tarmoqlar va obuna) */
+.footer-bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.footer-social-icons a {
+    color: #212529;
+    background-color: #444;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.footer-social-icons a:hover {
+    background-color: #59ab6e;
+}
+
+.subscribe-form input[type="email"] {
+    padding: 10px 15px;
+    border: 1px solid #444;
+    background-color: #333;
+    color: white;
+    border-radius: 3px 0 0 3px;
+    width: 250px;
+}
+
+.subscribe-form button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #59ab6e;
+    color: white;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+}
+
+/* Copyright satri */
+.copyright-bar {
+    background-color: #1a1e21; /* Undan ham to'qroq fon */
+    padding: 15px 0;
+    text-align: center;
+    font-size: 0.875rem;
+}
+
+.copyright-bar p {
+    margin: 0;
+}
+
+.copyright-bar a {
+    color: #59ab6e;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .product-grid { grid-template-columns: 1fr; }
+}
+
+/* Gamburger tugmasining ko'rinishi */
+.menu-btn {
+    display: none; /* Kompyuterda yashiramiz */
+    width: 35px;
+    height: 30px;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 5px;
+    border: 1px solid #ddd; /* Atrofidagi kichik ramka (rasmdagidek) */
+    border-radius: 5px;
+}
+
+/* Ichidagi 3 ta chiziq */
+.menu-btn span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #212934; /* Chiziqlar rangi */
+    border-radius: 2px;
+    transition: 0.3s; /* Animatsiya uchun */
+}
+
+/* Mobil rejimda tugmani ko'rsatish */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: flex; /* Endi ko'rinadi! */
+    }
+}
+
+/* Kompyuter varianti uchun (Katta ekran) */
+.main-header {
+    background: #fff;
+    padding: 15px 0;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.menu-btn {
+    display: none; /* Kompyuterda ko'rinmaydi */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-btn span {
+    width: 30px;
+    height: 3px;
+    background: #212934;
+    display: block;
+}
+
+/* Mobil varianti uchun (768px dan kichik) */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none; /* Dastlab yopiq turadi */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        padding: 20px;
+        z-index: 100;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+    .menu-btn {
+        display: flex; /* Faqat mobilda chiqadi */
+    }
+
+    /* JS orqali qo'shiladigan klass */
+    .nav-menu.show-menu {
+        display: flex;
+    }
+    
+    .nav-icons {
+        display: flex;
+    }
+}
+
+/* Qidiruv oynasi foni (butun ekranni qoplaydi) */
+.search-overlay {
+    display: none; /* Boshida yopiq */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.95); /* Oqish shaffof fon */
+    z-index: 2000; /* Hamma narsadan tepada turadi */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Oyna ichidagi kontent */
+.search-content {
+    width: 80%;
+    max-width: 800px;
+    position: relative;
+    text-align: center;
+}
+
+/* Qidiruv qatori */
+.search-input-group {
+    display: flex;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.search-input-group input {
+    flex: 1;
+    padding: 15px 20px;
+    border: none;
+    font-size: 18px;
+    outline: none;
+}
+
+.search-submit {
+    background-color: #59ab6e; /* Yashil tugma */
+    color: white;
+    border: none;
+    padding: 0 25px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* Yopish tugmasi (X) */
+.close-btn {
+    position: absolute;
+    top: -60px;
+    right: 0;
+    background: none;
+    border: none;
+    font-size: 40px;
+    color: #212934;
+    cursor: pointer;
+}
+
+/* Oyna ochilganda ishlatiladigan klass */
+.search-open {
+    display: flex !important;
+}
