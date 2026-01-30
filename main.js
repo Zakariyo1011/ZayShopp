@@ -43,7 +43,7 @@ closeSearch.onclick = function() {
     searchModal.classList.remove('search-open');
 };
 
-// 4. Fonni (bo'sh joyni) bosganda ham yopilsin desangiz:
+// 4. Fonni (bo'sh joyni) bosganda ham yopilsin:
 window.onclick = function(event) {
     if (event.target == searchModal) {
         searchModal.classList.remove('search-open');

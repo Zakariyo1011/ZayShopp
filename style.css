@@ -16,15 +16,17 @@ body { font-family: 'Roboto', sans-serif;
 /* Top Nav */
 .top-nav { background: #212934; 
            padding: 12px 0; 
-           font-size: 14px; 
+           font-size: 11.8px; 
+           
         }
 .top-nav a { color: #cfd6e1; 
              text-decoration: none; 
-             margin-right: 15px; 
+             margin-left: 15px; 
             }
 .top-nav i { color: #cfd6e1; 
-             margin-right: 5px; 
+             margin-right: 1px; 
             }
+
 
 /* Header */
 .main-header { padding: 20px 0; 
@@ -65,6 +67,8 @@ body { font-family: 'Roboto', sans-serif;
 .hero-text h1 { font-size: 48px; 
                 color: #212529; 
                 margin-bottom: 10px; 
+                color: #59ab6e;
+                font-weight: 200px !important;
             }
 .hero-text h1 span { color: #59ab6e; 
 }
@@ -141,6 +145,7 @@ body { font-family: 'Roboto', sans-serif;
          border-radius: 50%; 
          padding: 2px 7px; 
          font-size: 12px; 
+         font-weight: 700;
         }
 
 /* Featured Products Styles */
@@ -224,8 +229,8 @@ body { font-family: 'Roboto', sans-serif;
 
 /* Footer uslublari */
 .site-footer {
-    background-color: #212529; /* To'q fon rangi */
-    color: #adb5bd; /* Ochiq matn rangi */
+    background-color: #212934; /* To'q fon rangi */
+    color: #dcdde1; /* Ochiq matn rangi */
     padding-top: 60px;
 }
 
@@ -249,29 +254,24 @@ body { font-family: 'Roboto', sans-serif;
 }
 
 .footer-col h4 {
-    color: #fff;
-    font-size: 1.2rem;
-    font-weight: 500;
+    color: #cfd6e1;
+    font-size: 30px;
+    font-weight: 300;
     margin-bottom: 25px;
     position: relative;
 }
 
 /* Sarlavhalar ostidagi yashil chiziq */
-.footer-col h4::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    width: 20%;
-    height: 2px;
-    background-color: #59ab6e;
-}
+
 
 .footer-col address p,
 .footer-col ul li a {
-    color: #adb5bd;
+    color: #dcdde1;
     line-height: 2;
     transition: color 0.3s;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px !important;
+    font-weight: 300 !important;
 }
 
 .footer-col ul li a:hover {
@@ -291,16 +291,18 @@ body { font-family: 'Roboto', sans-serif;
 }
 
 .footer-social-icons a {
-    color: #212529;
-    background-color: #444;
+    color: #dcdde1;
+    background-color: #212934;
     width: 40px;
     height: 40px;
-    display: inline-flex;
+    display: inline-block;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    margin-right: 10px;
+    margin-left: 10px;
     transition: background-color 0.3s;
+    font-size: 25px !important;
+    border-color: #2d343f !important;
 }
 
 .footer-social-icons a:hover {
@@ -342,8 +344,10 @@ body { font-family: 'Roboto', sans-serif;
 }
 
 /* Responsive */
-@media (max-width: 992px) {
-    .product-grid { grid-template-columns: 1fr; }
+@media (min-width: 1400px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 1320px;
+    }
 }
 
 /* Gamburger tugmasining ko'rinishi */
@@ -355,7 +359,7 @@ body { font-family: 'Roboto', sans-serif;
     justify-content: space-between;
     cursor: pointer;
     padding: 5px;
-    border: 1px solid #ddd; /* Atrofidagi kichik ramka (rasmdagidek) */
+    border: 1px solid #ddd; /* Atrofidagi kichik ramka  */
     border-radius: 5px;
 }
 
