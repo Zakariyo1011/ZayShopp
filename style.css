@@ -17,15 +17,38 @@ body { font-family: 'Roboto', sans-serif;
 .top-nav { background: #212934; 
            padding: 12px 0; 
            font-size: 11.8px; 
+           font-weight: 300 !important;
            
         }
-.top-nav a { color: #cfd6e1; 
-             text-decoration: none; 
-             margin-left: 15px; 
-            }
+.top-nav a { 
+    color: #cfd6e1; 
+    text-decoration: none;        
+}
+
+.top-nav .social-links a { 
+    margin-left: 15px;
+}
+
 .top-nav i { color: #cfd6e1; 
-             margin-right: 1px; 
+             margin-left: 0px 8px;
+
             }
+.contact-links i {
+    margin: 0 8px;
+    
+}
+
+
+
+.contact-links span i {
+    transform: rotate(-90deg);
+}
+    
+
+.social-links a { font-size: .9em !important;
+}
+
+
 
 
 /* Header */
@@ -46,21 +69,41 @@ body { font-family: 'Roboto', sans-serif;
                 font-weight: 300 !important; 
                 font-size: 18px; 
             }
-.nav-menu li a:hover, .nav-menu li a.active { color: #59ab6e; 
+.nav-menu li a:hover, .nav-menu li a.active { 
+    color: #59ab6e; 
 }
 
 /* Hero Section */
+
+
 .hero { background: #efefef; 
         height: 100vh; 
         position: relative; 
         display: flex; 
         align-items: center; 
-        overflow: hidden; }
-.hero .slide { display: flex; 
+        overflow: hidden;
+        
+    }
+    .hero .container {
+        padding: 0 48px;
+    }
+.hero .slide { display: none; 
             align-items: center; 
             justify-content: space-between; 
             width: 100%; 
         }
+
+
+        /* Faqat active klassi bor slayd ko'rinadi */
+.hero .slide.active { 
+    display: flex; 
+}
+
+.slide-simple-style .hero-text h1{
+    color: #212529;
+    font-weight: 300 !important;
+}
+
 .hero-text { flex: 1; 
              padding-right: 50px; 
             }
@@ -68,10 +111,17 @@ body { font-family: 'Roboto', sans-serif;
                 color: #212529; 
                 margin-bottom: 10px; 
                 color: #59ab6e;
-                font-weight: 200px !important;
+                font-weight: 200 !important;
             }
+
+
+
 .hero-text h1 span { color: #59ab6e; 
 }
+
+.text-succes { color: #59ab6e;
+    text-decoration: underline; 
+}   
 .hero-text h2 { font-size: 30px; 
                 font-weight: 300; 
                 margin-bottom: 20px; 
@@ -80,6 +130,11 @@ body { font-family: 'Roboto', sans-serif;
                line-height: 1.6; 
                font-weight: 300; 
             }
+
+.hero-text p span {
+    color: #59ab6e;
+    text-decoration: underline;
+}
 .hero-img { flex: 1; 
             text-align: center; 
         }
@@ -95,6 +150,7 @@ body { font-family: 'Roboto', sans-serif;
          font-size: 40px; 
          color: #59ab6e; 
          cursor: pointer; 
+         z-index: 10;
         }
 .prev { left: 20px; 
 }
@@ -102,19 +158,33 @@ body { font-family: 'Roboto', sans-serif;
  }
 
 /* Categories */
+
+.categories-container { padding-top: 3rem !important;
+    padding-bottom: 3rem !important; 
+                     
+                    }
+
 .section-title { text-align: center; 
                  margin: 50px 0; 
+                 ;
                 }
-.section-title h2 { font-size: 36px; 
-                    font-weight: 700; 
+.section-title h1 { font-family: 'Roboto', sans-serif;
+                    font-size: 48px !important;
+                    font-weight: 300 !important;
+                    padding: 18px;
+                }
+.section-title p { font-family: 'Roboto', sans-serif;
+                   font-size: 18px !important;
+                   font-weight: 300 !important;
+    
                 }
 .category-grid { display: grid; 
                  grid-template-columns: repeat(3, 1fr); 
-                 gap: 30px; 
+                 gap: -50px; 
                  text-align: center; 
                 }
-.cat-img { width: 250px; 
-           height: 250px; 
+.cat-img { width: 350px; 
+           height: 350px; 
            border-radius: 50%; 
            border: 1px solid #ddd; 
            margin: 0 auto 20px; 
@@ -124,33 +194,46 @@ body { font-family: 'Roboto', sans-serif;
                height: 100%; 
                object-fit: cover; 
             }
-.btn-green { display: inline-block; 
+.btn-green { display: inline-block;
              background: #59ab6e; 
              color: #fff; 
-             padding: 12px 25px; 
-             border-radius: 5px; 
+             padding: 11px 12px; 
+             border-radius: 4px; 
              text-decoration: none; 
-             margin-top: 15px; 
+             margin-top: 15px;
+             text-align: center;
+             font-size: 18px !important;
+    font-weight: 300 !important; 
             }
 
 /* Badge */
 .nav-icons a { position: relative; 
                color: #212529; 
-               font-size: 22px; 
+               font-size: 18px; 
                margin-left: 20px; 
+               text-decoration: none;
+               
             }
 .badge { position: absolute; 
-         top: -10px; right: -10px; 
-         background: #e9ecef; color: #212529; 
-         border-radius: 50%; 
-         padding: 2px 7px; 
-         font-size: 12px; 
+         top: 0 !important; 
+         background: #e9eef5 !important; color: #212529; 
+         border-radius: 50rem !important; 
+         padding: .35em .65em;
+         font-size: .75em; 
          font-weight: 700;
+         transform: translate(-50%, -50%) !important;
+         line-height: 1;
+         text-align: center;
+         white-space: nowrap;
+            vertical-align: baseline;
         }
 
 /* Featured Products Styles */
-.bg-light { background-color: #f8f9fa !important; 
+.bg-light { background-color: #e9eef5 !important; 
+    padding: 55px ;
 }
+
+
 
 .product-grid {
     display: grid;
@@ -188,30 +271,32 @@ body { font-family: 'Roboto', sans-serif;
     list-style: none;
     display: flex;
     padding: 0;
+    font-weight: 500;
 }
 
 .stars li i {
-    font-size: 14px;
+    font-size: 18px;
+    padding: 2px;
 }
 
-.text-yellow { color: #ffc107; }
+.text-yellow { color: #ede861 !important;; }
 .text-muted { color: #bcbcbc; }
 
 .price {
-    color: #6c757d;
+    color: #bcbcbc !important;
     font-weight: 400;
 }
 
 .product-title {
     display: block;
-    font-size: 22px;
-    font-weight: 500;
+    font-size: 30px !important;
+    font-weight: 300;
     color: #212529;
     text-decoration: none;
     margin-bottom: 10px;
 }
 
-.product-title:hover { color: #59ab6e; }
+
 
 .product-text {
     font-size: 16px;
@@ -222,16 +307,21 @@ body { font-family: 'Roboto', sans-serif;
 }
 
 .reviews {
-    color: #6c757d;
-    font-size: 14px;
+    color: #bcbcbc !important;
+    font-size: 18px !important;
     margin: 0;
+    font-weight: 300 !important;
+
+    /* color: #bcbcbc !important;
+    font-size: 18px;
+    font-weight: 300; */
 }
 
 /* Footer uslublari */
 .site-footer {
     background-color: #212934; /* To'q fon rangi */
     color: #dcdde1; /* Ochiq matn rangi */
-    padding-top: 60px;
+    padding-top: 86px;
 }
 
 .footer-columns {
@@ -259,6 +349,7 @@ body { font-family: 'Roboto', sans-serif;
     font-weight: 300;
     margin-bottom: 25px;
     position: relative;
+    
 }
 
 /* Sarlavhalar ostidagi yashil chiziq */
@@ -272,7 +363,19 @@ body { font-family: 'Roboto', sans-serif;
     font-family: 'Roboto', sans-serif;
     font-size: 18px !important;
     font-weight: 300 !important;
+    text-decoration: none;
+    
+    
 }
+
+.site-footer ul li {
+  list-style-type: none !important;
+  /* Agar chap tomonda bo'sh joy qolsa, buni ham qo'shing: */
+  padding-left: 0 !important; 
+}
+
+
+
 
 .footer-col ul li a:hover {
     color: #59ab6e;
@@ -303,40 +406,79 @@ body { font-family: 'Roboto', sans-serif;
     transition: background-color 0.3s;
     font-size: 25px !important;
     border-color: #2d343f !important;
+
+    text-align: center;
+    /* vertical-align: middle; */
+    padding-top: 5px;
 }
 
 .footer-social-icons a:hover {
-    background-color: #59ab6e;
+    background-color: #cfd6e1;
+    color: #212529 !important;
+}
+
+.subscribe-form {
+    display: flex;
 }
 
 .subscribe-form input[type="email"] {
-    padding: 10px 15px;
-    border: 1px solid #444;
-    background-color: #333;
+    padding: 12px 10px;
+    border: 1px solid #2d343f;
+    background-color: #212934;
     color: white;
     border-radius: 3px 0 0 3px;
-    width: 250px;
+    width: 200px;
 }
 
 .subscribe-form button {
-    padding: 10px 20px;
+    padding: 12px 10px;
     border: none;
     background-color: #59ab6e;
-    color: white;
+    color: #cfd6e1 !important;
     border-radius: 0 3px 3px 0;
     cursor: pointer;
+    padding-right: 30px;
+}
+
+.subscribe-form input[type="email"] {
+    font-size: 17px; 
+    padding: 10px;   
+    
+}
+
+
+
+
+.subscribe-form button {
+    font-size: 17px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+
+.footer-col address p span i {
+    transform: rotate(-90deg);
 }
 
 /* Copyright satri */
 .copyright-bar {
-    background-color: #1a1e21; /* Undan ham to'qroq fon */
-    padding: 15px 0;
-    text-align: center;
-    font-size: 0.875rem;
+    background-color: #1d242d; /* Undan ham to'qroq fon */
+    padding: 24px 0;
+    text-align: left;
+    font-size: 18px;
+}
+
+.copyright-bar .container p {
+    color: #cfd6e1;
 }
 
 .copyright-bar p {
     margin: 0;
+}
+
+.copyright-bar span {
+    
+    text-decoration: underline; 
 }
 
 .copyright-bar a {
@@ -350,6 +492,114 @@ body { font-family: 'Roboto', sans-serif;
     }
 }
 
+/* --- RESPONSIVE DESIGN --- */
+
+/* 1. Planshetlar uchun (max-width: 992px) */
+@media (max-width: 992px) {
+    .nav-menu li a {
+        padding: 0 20px; /* Menular orasidagi masofani kamaytiramiz */
+    }
+    
+    .category-grid, .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* 3 tadan 2 taga o'tkazamiz */
+        gap: 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 38px;
+    }
+}
+
+/* 2. Mobil telefonlar uchun (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Top Navni mobilda soddalashtiramiz */
+    .top-nav .d-flex {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .top-nav {
+        display: none;
+    }
+    .contact-links {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Hero qismi (Slayder) */
+    .hero {
+        height: auto;
+        padding: 60px 0;
+    }
+    .hero .slide.active {
+        flex-direction: column; /* Rasm va tekstni ustma-ust qilamiz */
+        text-align: center;
+    }
+    .hero-text {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+    .hero-text h1 {
+        font-size: 32px;
+    }
+
+    /* Gridlarni 1 talik ustun qilish */
+    .category-grid, .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cat-img {
+        width: 250px;
+        height: 250px;
+    }
+
+    /* Footer ustunlarini ustma-ust qilish */
+    .footer-columns {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-bottom-bar {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .subscribe-form {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    /* Header navi */
+    .nav-menu {
+        padding: 10px 0;
+    }
+    .nav-menu li a {
+        padding: 10px 0;
+        display: block;
+        border-bottom: 1px solid #eee;
+    }
+
+    /* Slayder strelkalari kichikroq */
+    .arrow {
+        font-size: 25px;
+    }
+}
+
+/* 3. Kichik mobil ekranlar (max-width: 480px) */
+@media (max-width: 480px) {
+    .brand {
+        font-size: 32px;
+    }
+    .hero-text h1 {
+        font-size: 26px;
+    }
+    .section-title h1 {
+        font-size: 30px !important;
+    }
+    .subscribe-form input[type="email"] {
+        width: 140px; /* Kichik ekranlarda sig'ishi uchun */
+    }
+}
+
 /* Gamburger tugmasining ko'rinishi */
 .menu-btn {
     display: none; /* Kompyuterda yashiramiz */
@@ -359,7 +609,7 @@ body { font-family: 'Roboto', sans-serif;
     justify-content: space-between;
     cursor: pointer;
     padding: 5px;
-    border: 1px solid #ddd; /* Atrofidagi kichik ramka  */
+    border: px solid #ddd; /* Atrofidagi kichik ramka  */
     border-radius: 5px;
 }
 
@@ -377,6 +627,7 @@ body { font-family: 'Roboto', sans-serif;
 @media (max-width: 768px) {
     .menu-btn {
         display: flex; /* Endi ko'rinadi! */
+        margin-left:auto;
     }
 }
 
@@ -401,6 +652,8 @@ body { font-family: 'Roboto', sans-serif;
     background: #212934;
     display: block;
 }
+
+
 
 /* Mobil varianti uchun (768px dan kichik) */
 @media (max-width: 768px) {
@@ -427,9 +680,27 @@ body { font-family: 'Roboto', sans-serif;
     }
     
     .nav-icons {
+        display: none; 
+        flex-direction: row; /* Ikonkalar yonma-yon tursin */
+        justify-content: center; /* Markazda */
+        gap: 20px;
+        
+        /* Mutloq joylashuvni bekor qilamiz yoki moslaymiz */
+        position: relative; 
+        width: 100%;
+        background: #f9f9f9; /* Menyudan ajralib turishi uchun rang */
+        padding: 15px 0;
+        border-top: 1px solid #eee; /* Menyu bilan chegara */
+    }
+
+    /* Agar menyu ochilganda ikonka ham chiqishi kerak bo'lsa */
+    .nav-menu.show-menu ~ .nav-icons {
         display: flex;
     }
 }
+
+
+
 
 /* Qidiruv oynasi foni (butun ekranni qoplaydi) */
 .search-overlay {
@@ -439,10 +710,12 @@ body { font-family: 'Roboto', sans-serif;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.95); /* Oqish shaffof fon */
-    z-index: 2000; /* Hamma narsadan tepada turadi */
+    background-color: #fff; /* Oqish shaffof fon */
+    z-index: 1050; /* Hamma narsadan tepada turadi */
     justify-content: center;
-    align-items: center;
+    
+    padding-top: 175px;
+    transition: 0.3s ease-in-out;
 }
 
 /* Oyna ichidagi kontent */
@@ -451,6 +724,7 @@ body { font-family: 'Roboto', sans-serif;
     max-width: 800px;
     position: relative;
     text-align: center;
+    
 }
 
 /* Qidiruv qatori */
@@ -459,11 +733,15 @@ body { font-family: 'Roboto', sans-serif;
     border: 1px solid #ced4da;
     border-radius: 4px;
     overflow: hidden;
+    border-color: #e8e8e8;
 }
 
 .search-input-group input {
-    flex: 1;
-    padding: 15px 20px;
+    flex: 1 1 auto;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    padding: 6px 12px;
     border: none;
     font-size: 18px;
     outline: none;
@@ -473,24 +751,88 @@ body { font-family: 'Roboto', sans-serif;
     background-color: #59ab6e; /* Yashil tugma */
     color: white;
     border: none;
-    padding: 0 25px;
+    padding: 10px 13px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 /* Yopish tugmasi (X) */
 .close-btn {
     position: absolute;
-    top: -60px;
-    right: 0;
+    top: -150px;
+    left: 0;
     background: none;
     border: none;
-    font-size: 40px;
-    color: #212934;
+    font-size: 30px;
+    color: #000;
     cursor: pointer;
+    opacity: 0.5;
+    border-radius: .25rem;
+    padding: .25em .25em;
+    box-sizing: content-box;
+    width: 1em;
+    height: 1em;
+    
 }
 
 /* Oyna ochilganda ishlatiladigan klass */
 .search-open {
     display: flex !important;
 }
+
+
+
+/* Slayder asosiy uslublari */
+.hero {
+    position: relative;
+    overflow: hidden;
+    background-color: #efefef;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.slide {
+    display: none; /* Barcha slaydlarni yashirish */
+    width: 100%;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.slide.active {
+    display: flex; /* Faqat active bo'lganini ko'rsatish */
+    justify-content: space-between;
+    align-items: center;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Tugmalar uslubi */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #59ab6e;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+
+
+
+
+
+
+
+
+
+
+

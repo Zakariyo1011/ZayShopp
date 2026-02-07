@@ -1,49 +1,66 @@
-// Slayderni 1 ga 1 ishlatish
+// 1. SLAYDER FUNKSIYASI
 const slides = document.querySelectorAll('.slide');
-const next = document.querySelector('.next');
-const prev = document.querySelector('.prev');
-let current = 0;
+const nextBtn = document.querySelector('.next');
+const prevBtn = document.querySelector('.prev');
+let currentIndex = 0;
 
 function showSlide(index) {
-    slides.forEach(s => s.classList.remove('active'));
-    current = (index + slides.length) % slides.length;
-    slides[current].classList.add('active');
+    // Hammasidan active klassini olib tashlash
+    slides.forEach(slide => slide.classList.remove('active'));
+    
+    // Indexni hisoblash (aylanma qilish)
+    if (index >= slides.length) {
+        currentIndex = 0;
+    } else if (index < 0) {
+        currentIndex = slides.length - 1;
+    } else {
+        currentIndex = index;
+    }
+
+    
+    
+    // Yangi slaydga active klassini qo'shish
+    slides[currentIndex].classList.add('active');
 }
 
-next.addEventListener('click', () => showSlide(current + 1));
-prev.addEventListener('click', () => showSlide(current - 1));
 
-// Avtomatik aylanish (rasmda ko'rsatilganidek)
-setInterval(() => showSlide(current + 1), 5000);
+// Tugmalarni bosganda
+if (nextBtn && prevBtn) {
+    nextBtn.onclick = () => showSlide(currentIndex + 1);
+    prevBtn.onclick = () => showSlide(currentIndex - 1);
+}
 
-const btn = document.getElementById('mobile-menu-btn');
+// Avtomatik aylanish (5 soniya)
+setInterval(() => showSlide(currentIndex + 1), 5000);
+
+
+// 2. MOBIL MENYU (Toggle)
+const menuBtn = document.getElementById('mobile-menu-btn');
 const menu = document.getElementById('nav-links-container');
 
-if (btn) {
-    btn.onclick = function() {
+if (menuBtn && menu) {
+    menuBtn.onclick = function() {
         menu.classList.toggle('show-menu');
-        console.log("Menyu holati o'zgardi");
     };
 }
 
 
-// 1. Elementlarni tanlab olamiz
-const searchIcon = document.querySelector('.fa-search').parentElement; // Ikonka turgan <a> tagi
+// 3. QIDIRUV MODAL
+const searchIcon = document.querySelector('.fa-search');
 const searchModal = document.getElementById('search-modal');
 const closeSearch = document.getElementById('close-search');
 
-// 2. Qidiruv ikonkasini bosganda ochish
-searchIcon.onclick = function(e) {
-    e.preventDefault(); // Sahifa tepaga sakrab ketmasligi uchun
-    searchModal.classList.add('search-open');
-};
+if (searchIcon && searchModal) {
+    searchIcon.parentElement.onclick = function(e) {
+        e.preventDefault();
+        searchModal.classList.add('search-open');
+    };
+}
 
-// 3. "X" tugmasini bosganda yopish
-closeSearch.onclick = function() {
-    searchModal.classList.remove('search-open');
-};
+if (closeSearch) {
+    closeSearch.onclick = () => searchModal.classList.remove('search-open');
+}
 
-// 4. Fonni (bo'sh joyni) bosganda ham yopilsin:
 window.onclick = function(event) {
     if (event.target == searchModal) {
         searchModal.classList.remove('search-open');
