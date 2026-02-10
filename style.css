@@ -1,25 +1,33 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Roboto', sans-serif; 
-       color: #212529; 
-    }
-.container { max-width: 1140px; 
-             margin: 0 auto;  
-             padding: 0 15px; 
-            }
-.d-flex { display: flex; 
+body { 
+    font-family: 'Roboto', sans-serif; 
+    color: #212529; 
 }
-.justify-content-between { justify-content: space-between; 
+
+.container { 
+    max-width: 1140px; 
+    margin: 0 auto;  
+    padding: 0 15px; 
 }
+
+.d-flex { 
+    display: flex; 
+}
+
+.justify-content-between { 
+    justify-content: space-between; 
+}
+
 .align-items-center { align-items: center; 
 }
 
 /* Top Nav */
-.top-nav { background: #212934; 
-           padding: 12px 0; 
-           font-size: 11.8px; 
-           font-weight: 300 !important;
-           
-        }
+.top-nav { 
+    background: #212934; 
+    padding: 12px 0; 
+    font-size: 11.8px; 
+    font-weight: 300 !important;      
+}
 .top-nav a { 
     color: #cfd6e1; 
     text-decoration: none;        
@@ -60,16 +68,42 @@ body { font-family: 'Roboto', sans-serif;
          font-weight: 700; color: #59ab6e;
          text-decoration: none; 
         }
-.nav-menu { list-style: none; 
+.nav-menu{ list-style: none; 
             display: flex; 
+            align-items: center;
+            width: 100%;
+            margin: 0;
+            padding: 0;
         }
+
+.nav-menu::before {
+    content: "";
+    flex: 1;
+}
+.nav-menu li:not(.mobile-icons) {
+    display: inline-block;
+}
 .nav-menu li a { padding: 0 50px; 
                 text-decoration: none; 
                 color: #212529; 
                 font-weight: 300 !important; 
                 font-size: 18px; 
+                transition: 0.3s;
             }
-.nav-menu li a:hover, .nav-menu li a.active { 
+.nav-menu li.mobile-icons {
+    flex: 1; /* Bu ham 1 ulush joy egallaydi */
+    display: flex;
+    justify-content: flex-end; /* Ikonalarni eng o'ngga taqaydi */
+    align-items: center;
+}
+
+
+.nav-menu li.mobile-icons a {
+    padding: 0 !important; /* 50px ni nolga aylantiradi */
+    margin: 0 10px; /* Ikonalar bir-biriga yopishib qolmasligi uchun */
+    display: inline-block;
+}
+.nav-menu li:not(.mobile-icons) a:hover, .nav-menu li:not(.mobile-icons) a.active { 
     color: #59ab6e; 
 }
 
@@ -207,7 +241,7 @@ body { font-family: 'Roboto', sans-serif;
             }
 
 /* Badge */
-.nav-icons a { position: relative; 
+.mobile-icons a { position: relative; 
                color: #212529; 
                font-size: 18px; 
                margin-left: 20px; 
@@ -575,7 +609,7 @@ body { font-family: 'Roboto', sans-serif;
     .nav-menu li a {
         padding: 10px 0;
         display: block;
-        border-bottom: 1px solid #eee;
+        
     }
 
     /* Slayder strelkalari kichikroq */
@@ -629,6 +663,8 @@ body { font-family: 'Roboto', sans-serif;
         display: flex; /* Endi ko'rinadi! */
         margin-left:auto;
     }
+
+
 }
 
 /* Kompyuter varianti uchun (Katta ekran) */
@@ -670,6 +706,36 @@ body { font-family: 'Roboto', sans-serif;
         box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     }
 
+    .nav-menu {
+        display: none; /* JS orqali show-menu bo'lguncha */
+        flex-direction: column;
+        align-items: flex-start !important; /* Elementlarni chapga taqaydi */
+        text-align: left !important;         /* Matnni chapga tekislaydi */
+        padding: 20px !important;            /* Devorga yopishib qolmasligi uchun */
+    }
+
+    /* 2. Desktop uchun ishlatilgan ::before muvozanatini o'chiramiz */
+    .nav-menu::before {
+        display: none !important; 
+    }
+
+    /* 3. Har bir li va a elementini chapga yo'naltiramiz */
+    .nav-menu li {
+        width: 100%;
+        text-align: left !important;
+    }
+
+    .nav-menu li a {
+        display: block;
+        width: 100%;
+        padding: 12px 0 !important; /* Home, About oraliq masofasi */
+        margin: 0 !important;
+        text-align: left !important;
+        justify-content: flex-start !important;
+    }
+
+ 
+
     .menu-btn {
         display: flex; /* Faqat mobilda chiqadi */
     }
@@ -678,25 +744,83 @@ body { font-family: 'Roboto', sans-serif;
     .nav-menu.show-menu {
         display: flex;
     }
+
+    .mobile-icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Yoki 'center' qilsangiz o'rtaga o'tadi */
+    gap: 20px; /* Ikonalar orasidagi masofa */
+    padding: 15px 20px; /* Atrofidagi bo'shliq */
+    margin-top: 10px;
+}
+
+.nav-menu #nav-links-container li a {
+   align-items: flex-start;
+   text-align: left !important;
+}
+
+
     
-    .nav-icons {
-        display: none; 
-        flex-direction: row; /* Ikonkalar yonma-yon tursin */
-        justify-content: center; /* Markazda */
-        gap: 20px;
-        
-        /* Mutloq joylashuvni bekor qilamiz yoki moslaymiz */
-        position: relative; 
-        width: 100%;
-        background: #f9f9f9; /* Menyudan ajralib turishi uchun rang */
-        padding: 15px 0;
-        border-top: 1px solid #eee; /* Menyu bilan chegara */
+/* 1. Desktop ikonkasi mobil menyu ichida ko'rinmasligi uchun */
+    .desktop-search-btn {
+        display: none !important;
     }
 
-    /* Agar menyu ochilganda ikonka ham chiqishi kerak bo'lsa */
-    .nav-menu.show-menu ~ .nav-icons {
-        display: flex;
+    
+    
+}
+
+/* 1. Katta ekranda (Desktop) mobil qidiruvni yashiramiz */
+.mobile-search-bar {
+    display: none !important;
+}
+
+/* 2. Mobil versiya uchun stillar (768px dan kichik ekranlar) */
+@media (max-width: 768px) {
+    
+    /* Mobil qidiruvni ko'rsatamiz */
+    .mobile-search-bar {
+        display: flex !important;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        overflow: hidden;
+        background: #fff;
+        width: 100%;
+        margin-bottom: 10px;
     }
+
+    .mobile-search-bar input {
+        flex: 1;
+        border: none;
+        padding: 10px 15px;
+        font-size: 16px;
+        outline: none;
+        background: transparent;
+    }
+
+    .mobile-search-bar .search-submit {
+        background-color: #e9ecef;
+        border: none;
+        border-left: 1px solid #ced4da;
+        padding: 0 15px;
+        color: #212529;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Ikonalar konteyneri */
+    .action-icons {
+        display: flex;
+        gap: 20px;
+        padding-top: 5px;
+    }
+}
+
+/* 3. Asosiy ekrandagi (Desktop) search ikonkasi buzilmasligi uchun */
+/* Agar sizda desktopda faqat ikonka bo'lsa, uning stilini o'z holiga qaytaramiz */
+.nav-menu .fa-search {
+    cursor: pointer;
+    font-size: 18px;
 }
 
 
@@ -826,6 +950,47 @@ body { font-family: 'Roboto', sans-serif;
 .next { right: 20px; }
 
 
+
+@media (max-width: 768px) {
+    /* Umumiy konteyner - qidiruv paneli va ikonalarni yonma-yon qilish */
+    .mobile-icons {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        padding: 15px 20px !important;
+        margin-top: 10px !important;
+        background: #fff;
+    }
+
+    /* Qidiruv paneli - kengligini 55% qilsak, ikonalarga ko'proq joy qoladi */
+    .mobile-search-bar {
+        
+        display: flex !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* Savatcha va Profil guruhi - bularni o'ngga surish */
+    .action-icons {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        flex: 1 !important; /* Qolgan hamma joyni egallab, o'ngga taqaladi */
+        gap: 40px !important; /* SAVATCHA VA PROFIL orasidagi masofa (Rasmdegidek keng) */
+    }
+
+    /* Ikonkalar uchun umumiy uslub */
+    .action-icons a {
+        position: relative !important;
+        display: inline-block !important;
+        font-size: 22px !important; /* Ikonkalarni sal kattaroq qilamiz */
+        color: #212529 !important;
+        text-decoration: none !important;
+    }
+
+    
+}
 
 
 
